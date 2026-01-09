@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kilismile Trails & Safaris | Kilimanjaro Expeditions & Tanzania Safaris</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --earth: #5D4E37;
+      --safari-green: #4A5D23;
+      --sunset: #C75B12;
+      --gold: #D4A853;
+      --sky: #6B8E9F;
+      --stone: #8B8680;
+      --cream: #FAF8F5;
+      --dark: #2C2620;
+      --mountain-blue: #2E5984;
+    }
+    
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    /* Top Bar */
+    .top-bar {
+      background: var(--dark);
+      color: white;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+    
+    .top-bar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .trust-badges {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .trust-badges span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .trust-badges .icon {
+      color: var(--gold);
+    }
+    
+    .top-contact {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .top-contact a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* Navigation */
+    nav {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 90px;
+    }
+    
+    .logo img {
+      height: 75px;
+      width: auto;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--sunset);
+    }
+    
+    .nav-cta {
+      background: var(--sunset);
+      color: white !important;
+      padding: 12px 24px;
+      border-radius: 4px;
+      transition: background 0.3s, transform 0.3s !important;
+    }
+    
+    .nav-cta:hover {
+      background: #a84a0f;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Slider */
+    .hero-slider {
+      position: relative;
+      height: 85vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    
+    .slide.active {
+      opacity: 1;
+    }
+    
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(44,38,32,0.8) 0%, rgba(44,38,32,0.4) 50%, rgba(44,38,32,0.2) 100%);
+    }
+    
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .hero-text {
+      max-width: 650px;
+    }
+    
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,168,83,0.2);
+      border: 1px solid var(--gold);
+      padding: 8px 16px;
+      margin-bottom: 24px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+    
+    .hero-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 400;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    
+    .hero-text h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    
+    .hero-text p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 32px;
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .hero-stat {
+      text-align: center;
+    }
+    
+    .hero-stat .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      color: var(--gold);
+    }
+    
+    .hero-stat .label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 1px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .btn-primary {
+      background: var(--sunset);
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    
+    .btn-primary:hover {
+      background: #a84a0f;
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: white;
+      padding: 16px 32px;
+      border: 1px solid rgba(255,255,255,0.4);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
+    
+    /* Slider Navigation */
+    .slider-nav {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      gap: 12px;
+    }
+    
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .slider-dot.active {
+      background: var(--gold);
+      transform: scale(1.2);
+    }
+    
+    .slider-dot:hover {
+      background: rgba(255,255,255,0.8);
+    }
+    
+    .slider-arrows {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      pointer-events: none;
+    }
+    
+    .slider-arrow {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.3s;
+      pointer-events: all;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .slider-arrow:hover {
+      background: var(--gold);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 24px;
+    }
+    
+    .section-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    
+    .section-tag {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--sunset);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--dark);
+    }
+    
+    .section-header h2 em {
+      font-style: italic;
+      color: var(--safari-green);
+    }
+    
+    .section-header p {
+      max-width: 700px;
+      margin: 16px auto 0;
+      font-size: 17px;
+      color: var(--stone);
+      line-height: 1.8;
+    }
+
+    /* Expeditions Grid */
+    .expeditions {
+      background: white;
+    }
+    
+    .expeditions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    
+    .expedition-card {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .expedition-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    
+    .expedition-card:hover img {
+      transform: scale(1.08);
+    }
+    
+    .expedition-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44,38,32,0.95) 0%, rgba(44,38,32,0.3) 50%, transparent 100%);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    
+    .expedition-tag {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .expedition-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      color: white;
+      margin-bottom: 8px;
+    }
+    
+    .expedition-card p {
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    
+    .expedition-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--gold);
+    }
+    
+    .expedition-link {
+      margin-top: 16px;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s;
+    }
+    
+    .expedition-card:hover .expedition-link {
+      gap: 12px;
+      color: var(--gold);
+    }
+
+    /* Routes Section - STUNNING */
+    .routes {
+      background: linear-gradient(180deg, var(--cream) 0%, #f0ebe3 100%);
+    }
+    
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    .route-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    
+    .route-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+    
+    .route-card-bg {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .route-card-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    
+    .route-card:hover .route-card-bg img {
+      transform: scale(1.1);
+    }
+    
+    .route-card-gradient {
+      position: absolute;
+      inset: 0;
+      transition: opacity 0.4s;
+    }
+    
+    /* Different gradient colors for each route */
+    .route-card.machame .route-card-gradient {
+      background: linear-gradient(135deg, rgba(199,91,18,0.85) 0%, rgba(199,91,18,0.4) 100%);
+    }
+    .route-card.lemosho .route-card-gradient {
+      background: linear-gradient(135deg, rgba(74,93,35,0.85) 0%, rgba(74,93,35,0.4) 100%);
+    }
+    .route-card.marangu .route-card-gradient {
+      background: linear-gradient(135deg, rgba(46,89,132,0.85) 0%, rgba(46,89,132,0.4) 100%);
+    }
+    .route-card.northern .route-card-gradient {
+      background: linear-gradient(135deg, rgba(139,134,128,0.85) 0%, rgba(93,78,55,0.4) 100%);
+    }
+    .route-card.rongai .route-card-gradient {
+      background: linear-gradient(135deg, rgba(212,168,83,0.85) 0%, rgba(199,91,18,0.4) 100%);
+    }
+    .route-card.umbwe .route-card-gradient {
+      background: linear-gradient(135deg, rgba(44,38,32,0.85) 0%, rgba(74,93,35,0.4) 100%);
+    }
+    
+    .route-card-content {
+      position: absolute;
+      inset: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+    }
+    
+    .route-duration {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: var(--dark);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    
+    .route-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      margin-bottom: 4px;
+    }
+    
+    .route-nickname {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    
+    .route-card p {
+      font-size: 14px;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+    
+    /* Click Me Hover Effect */
+    .route-click-me {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: white;
+      color: var(--dark);
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      opacity: 0;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+    
+    .route-card:hover .route-click-me {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    
+    .route-card-body {
+      background: white;
+      padding: 24px;
+    }
+    
+    .route-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .route-feature {
+      background: var(--cream);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--dark);
+    }
+    
+    .route-price {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .route-price span {
+      font-size: 13px;
+      color: var(--stone);
+    }
+    
+    .route-price strong {
+      font-size: 24px;
+      color: var(--sunset);
+    }
+
+    /* Guide Section */
+    .guide-section {
+      background: var(--dark);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .guide-section::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1000&q=90') center/cover;
+    }
+    
+    .guide-section::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: linear-gradient(to right, var(--dark) 0%, transparent 30%);
+    }
+    
+    .guide-content {
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+    }
+    
+    .guide-content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+    
+    .guide-content h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    
+    .guide-content p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    
+    .guide-quote {
+      background: rgba(255,255,255,0.05);
+      border-left: 3px solid var(--gold);
+      padding: 24px 32px;
+      margin: 32px 0;
+    }
+    
+    .guide-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-style: italic;
+      color: white;
+      margin-bottom: 12px;
+    }
+    
+    .guide-quote cite {
+      font-style: normal;
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+    
+    .guide-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 32px;
+    }
+    
+    .guide-stat .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      color: var(--gold);
+    }
+    
+    .guide-stat .label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1px;
+    }
+
+    /* Reviews */
+    .reviews {
+      background: linear-gradient(180deg, #f5f3ef 0%, white 100%);
+    }
+    
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+    }
+    
+    .tripadvisor-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    
+    .tripadvisor-badge span {
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    
+    .review-card {
+      background: white;
+      padding: 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .review-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    
+    .review-stars {
+      color: var(--gold);
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    
+    .review-card blockquote {
+      font-size: 15px;
+      color: var(--dark);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+    }
+    
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--earth), var(--safari-green));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+    }
+    
+    .review-info h4 {
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 14px;
+    }
+    
+    .review-info span {
+      font-size: 12px;
+      color: var(--stone);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--safari-green) 0%, var(--earth) 100%);
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      color: white;
+      margin-bottom: 16px;
+    }
+    
+    .cta-section p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+    
+    .btn-white {
+      background: white;
+      color: var(--dark);
+      padding: 16px 32px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 24px 24px;
+    }
+    
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    
+    .footer-brand p {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+    
+    .footer-brand img {
+      height: 70px;
+      filter: brightness(0) invert(1);
+    }
+    
+    .footer-badges {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    
+    .footer-badges span {
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 12px;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .footer-links h4 {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links a {
+      display: block;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 12px;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .footer-bottom p {
+      color: rgba(255,255,255,0.4);
+      font-size: 13px;
+    }
+
+    /* WhatsApp */
+    .whatsapp {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+    }
+    
+    .whatsapp a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: all 0.3s;
+    }
+    
+    .whatsapp a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+    }
+    
+    .whatsapp svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .expeditions-grid { grid-template-columns: 1fr; }
+      .routes-grid { grid-template-columns: 1fr 1fr; }
+      .guide-section::before, .guide-section::after { display: none; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .nav-links { display: none; }
+      .hero-text h2 { font-size: 36px; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+      section { padding: 48px 16px; }
+      .routes-grid { grid-template-columns: 1fr; }
+      .reviews-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="trust-badges">
+        <span><span class="icon">✓</span> 200+ Successful Summits</span>
+        <span><span class="icon">✓</span> TATO Licensed Operator</span>
+        <span><span class="icon">✓</span> 15+ Years Experience</span>
+        <span><span class="icon">✓</span> Surely Smiles Guaranteed</span>
+      </div>
+      <div class="top-contact">
+        <a href="mailto:info@kilismile.com">info@kilismile.com</a>
+        <a href="tel:+255123456789">+255 123 456 789</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <img src="https://i.imgur.com/placeholder.png" alt="Kilismile Trails & Safaris" onerror="this.style.display='none'">
+        <!-- Fallback text logo if image fails -->
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #2C2620;">KILISMILE TRAILS & SAFARIS</span>
+          <span style="font-size: 12px; font-style: italic; color: #5D4E37;">surely Smiles</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#">Kilimanjaro</a>
+        <a href="#">Safari Tours</a>
+        <a href="#">Day Trips</a>
+        <a href="#">About Us</a>
+        <a href="#">Gallery</a>
+        <a href="#" class="nav-cta">Plan Your Trip</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Slider -->
+  <section class="hero-slider">
+    <!-- Slides -->
+    <div class="slide active">
+      <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1920&q=90" alt="Kilimanjaro Summit">
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=90" alt="Safari Wildlife">
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1621414050946-1b936a78491f?w=1920&q=90" alt="Trekking Adventure">
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=90" alt="African Elephant">
+      <div class="slide-overlay"></div>
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=1920&q=90" alt="Zanzibar Beach">
+      <div class="slide-overlay"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-tag">
+          <span>★</span> Tanzania's Trusted Expedition Company
+        </div>
+        <h2>Climb <em>Kilimanjaro</em> with the Experts</h2>
+        <p>Join our world-class guides on the adventure of a lifetime. From Africa's highest summit to the wild heart of the Serengeti — surely smiles await.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="number">200+</div>
+            <div class="label">Summits</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">50+</div>
+            <div class="label">5-Star Reviews</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">15</div>
+            <div class="label">Years</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">1000+</div>
+            <div class="label">Happy Climbers</div>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Explore Expeditions</a>
+          <a href="#" class="btn-outline">View Routes & Pricing</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slider Navigation -->
+    <div class="slider-nav">
+      <div class="slider-dot active" data-slide="0"></div>
+      <div class="slider-dot" data-slide="1"></div>
+      <div class="slider-dot" data-slide="2"></div>
+      <div class="slider-dot" data-slide="3"></div>
+      <div class="slider-dot" data-slide="4"></div>
+    </div>
+    
+    <!-- Arrows -->
+    <div class="slider-arrows">
+      <button class="slider-arrow" id="prevSlide">❮</button>
+      <button class="slider-arrow" id="nextSlide">❯</button>
+    </div>
+  </section>
+
+  <!-- Expeditions -->
+  <section class="expeditions">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="section-tag">Choose Your Adventure</p>
+        <h2>Extraordinary <em>Experiences</em> Await</h2>
+      </div>
+      <div class="expeditions-grid">
+        <div class="expedition-card">
+          <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=90" alt="Kilimanjaro">
+          <div class="expedition-overlay">
+            <span class="expedition-tag">6-9 DAYS</span>
+            <h3>Mount Kilimanjaro</h3>
+            <p>Conquer Africa's highest peak at 5,895m. Multiple routes for every experience level, expert guides on every step.</p>
+            <div class="expedition-meta">
+              <span>From $2,200</span>
+              <span>•</span>
+              <span>All Inclusive</span>
+            </div>
+            <a href="#" class="expedition-link">View All Routes →</a>
+          </div>
+        </div>
+        <div class="expedition-card">
+          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=90" alt="Safari">
+          <div class="expedition-overlay">
+            <span class="expedition-tag">3-7 DAYS</span>
+            <h3>Safari Adventures</h3>
+            <p>Serengeti. Ngorongoro. Tarangire. Witness the Big Five and the Great Migration in extraordinary style.</p>
+            <div class="expedition-meta">
+              <span>From $1,800</span>
+              <span>•</span>
+              <span>Private Tours</span>
+            </div>
+            <a href="#" class="expedition-link">Explore Safaris →</a>
+          </div>
+        </div>
+        <div class="expedition-card">
+          <img src="https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=800&q=90" alt="Zanzibar">
+          <div class="expedition-overlay">
+            <span class="expedition-tag">BEACH ESCAPE</span>
+            <h3>Zanzibar Paradise</h3>
+            <p>Crystal waters, white sand beaches, Stone Town heritage. The perfect reward after your climb.</p>
+            <div class="expedition-meta">
+              <span>From $800</span>
+              <span>•</span>
+              <span>3-5 Days</span>
+            </div>
+            <a href="#" class="expedition-link">Discover Zanzibar →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Routes - STUNNING CARDS -->
+  <section class="routes">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="section-tag">Kilimanjaro Routes</p>
+        <h2>Choose Your <em>Path</em> to the Summit</h2>
+        <p>Every route offers a unique journey to the Roof of Africa. Our expert guides will help you select the perfect path based on your fitness level, timeframe, and the experience you're seeking.</p>
+      </div>
+      
+      <div class="routes-grid">
+        <!-- Machame -->
+        <div class="route-card machame">
+          <div class="route-card-bg">
+            <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=90" alt="Machame Route">
+            <div class="route-card-gradient"></div>
+            <div class="route-card-content">
+              <span class="route-duration">7 Days</span>
+              <h3>Machame Route</h3>
+              <p class="route-nickname">"The Whiskey Route"</p>
+              <p>The most scenic and popular route. Challenging terrain rewarded with breathtaking panoramic views.</p>
+            </div>
+            <div class="route-click-me">EXPLORE ROUTE →</div>
+          </div>
+          <div class="route-card-body">
+            <div class="route-features">
+              <span class="route-feature">Scenic Views</span>
+              <span class="route-feature">Challenging</span>
+              <span class="route-feature">Popular</span>
+            </div>
+            <div class="route-price">
+              <span>Starting from</span>
+              <strong>$2,400</strong>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lemosho -->
+        <div class="route-card lemosho">
+          <div class="route-card-bg">
+            <img src="https://images.unsplash.com/photo-1621414050946-1b936a78491f?w=600&q=90" alt="Lemosho Route">
+            <div class="route-card-gradient"></div>
+            <div class="route-card-content">
+              <span class="route-duration">8 Days</span>
+              <h3>Lemosho Route</h3>
+              <p class="route-nickname">"The Wilderness Route"</p>
+              <p>Our top recommendation. Remote start, excellent acclimatization, and pristine wilderness experience.</p>
+            </div>
+            <div class="route-click-me">EXPLORE ROUTE →</div>
+          </div>
+          <div class="route-card-body">
+            <div class="route-features">
+              <span class="route-feature">Best Acclimatization</span>
+              <span class="route-feature">Remote</span>
+              <span class="route-feature">Recommended</span>
+            </div>
+            <div class="route-price">
+              <span>Starting from</span>
+              <strong>$2,800</strong>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Marangu -->
+        <div class="route-card marangu">
+          <div class="route-card-bg">
+            <img src="https://images.unsplash.com/photo-1650668302197-7f556c34cb91?w=600&q=90" alt="Marangu Route">
+            <div class="route-card-gradient"></div>
+            <div class="route-card-content">
+              <span class="route-duration">6 Days</span>
+              <h3>Marangu Route</h3>
+              <p class="route-nickname">"The Coca-Cola Route"</p>
+              <p>The only route with hut accommodation. Gradual ascent makes it comfortable for beginners.</p>
+            </div>
+            <div class="route-click-me">EXPLORE ROUTE →</div>
+          </div>
+          <div class="route-card-body">
+            <div class="route-features">
+              <span class="route-feature">Hut Accommodation</span>
+              <span class="route-feature">Gradual</span>
+              <span class="route-feature">Beginner Friendly</span>
+            </div>
+            <div class="route-price">
+              <span>Starting from</span>
+              <strong>$2,200</strong>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Northern Circuit -->
+        <div class="route-card northern">
+          <div class="route-card-bg">
+            <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=600&q=90" alt="Northern Circuit">
+            <div class="route-card-gradient"></div>
+            <div class="route-card-content">
+              <span class="route-duration">9 Days</span>
+              <h3>Northern Circuit</h3>
+              <p class="route-nickname">"The Grand Traverse"</p>
+              <p>Full circumnavigation of Kilimanjaro. Ultimate solitude and the best acclimatization possible.</p>
+            </div>
+            <div class="route-click-me">EXPLORE ROUTE →</div>
+          </div>
+          <div class="route-card-body">
+            <div class="route-features">
+              <span class="route-feature">Full Circuit</span>
+              <span class="route-feature">Solitude</span>
+              <span class="route-feature">Premium</span>
+            </div>
+            <div class="route-price">
+              <span>Starting from</span>
+              <strong>$3,200</strong>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rongai -->
+        <div class="route-card rongai">
+          <div class="route-card-bg">
+            <img src="https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&q=90" alt="Rongai Route">
+            <div class="route-card-gradient"></div>
+            <div class="route-card-content">
+              <span class="route-duration">7 Days</span>
+              <h3>Rongai Route</h3>
+              <p class="route-nickname">"The Northern Approach"</p>
+              <p>Approaches from Kenya border. Drier conditions, less crowded, true wilderness experience.</p>
+            </div>
+            <div class="route-click-me">EXPLORE ROUTE →</div>
+          </div>
+          <div class="route-card-body">
+            <div class="route-features">
+              <span class="route-feature">Less Crowded</span>
+              <span class="route-feature">Dry Climate</span>
+              <span class="route-feature">Wilderness</span>
+            </div>
+            <div class="route-price">
+              <span>Starting from</span>
+              <strong>$2,500</strong>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Umbwe -->
+        <div class="route-card umbwe">
+          <div class="route-card-bg">
+            <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=600&q=90" alt="Umbwe Route">
+            <div class="route-card-gradient"></div>
+            <div class="route-card-content">
+              <span class="route-duration">6 Days</span>
+              <h3>Umbwe Route</h3>
+              <p class="route-nickname">"The Challenging Route"</p>
+              <p>The steepest and most direct route. For experienced trekkers seeking an intense challenge.</p>
+            </div>
+            <div class="route-click-me">EXPLORE ROUTE →</div>
+          </div>
+          <div class="route-card-body">
+            <div class="route-features">
+              <span class="route-feature">Steep</span>
+              <span class="route-feature">Challenging</span>
+              <span class="route-feature">Experienced</span>
+            </div>
+            <div class="route-price">
+              <span>Starting from</span>
+              <strong>$2,300</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section class="guide-section">
+    <div class="section-inner">
+      <div class="guide-content">
+        <p class="section-tag">Your Expert Guide</p>
+        <h2>Climb with <em>Hamadi</em></h2>
+        <p>With over 200 successful Kilimanjaro summits, Hamadi isn't just a guide — he's your partner on the mountain. Born in Moshi at the foot of Kilimanjaro, he's spent his entire life learning every route, weather pattern, and secret of the peak.</p>
+        <p>His passion for the mountain and dedication to safety ensures that every climber experiences the adventure of a lifetime.</p>
+        <div class="guide-quote">
+          <p>"Every climber has a story. My job is to make sure they reach the summit to tell it."</p>
+          <cite>— HAMADI, Lead Guide & Founder</cite>
+        </div>
+        <div class="guide-stats">
+          <div class="guide-stat">
+            <div class="number">200+</div>
+            <div class="label">SUMMITS</div>
+          </div>
+          <div class="guide-stat">
+            <div class="number">15</div>
+            <div class="label">YEARS</div>
+          </div>
+          <div class="guide-stat">
+            <div class="number">1000+</div>
+            <div class="label">HAPPY CLIMBERS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <div class="section-inner">
+      <div class="reviews-header">
+        <div class="section-header" style="text-align: left; margin-bottom: 0;">
+          <p class="section-tag">Traveler Stories</p>
+          <h2>What Our <em>Adventurers</em> Say</h2>
+        </div>
+        <div class="tripadvisor-badge">
+          <span style="color: #00AF87; font-size: 24px;">●</span>
+          <span>50+ Five-Star Reviews on TripAdvisor</span>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"The best trip of my entire life. Hamadi and his team made everything perfect. From the first step to the summit at sunrise, I felt completely safe and supported. Can't recommend them enough!"</blockquote>
+          <div class="review-author">
+            <div class="review-avatar">S</div>
+            <div class="review-info">
+              <h4>Sarah Mitchell</h4>
+              <span>New York, USA • Lemosho Route</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"We've traveled the world, but nothing compares to our Kilimanjaro expedition with Kilismile. Professional, safe, and absolutely unforgettable. They're the real deal."</blockquote>
+          <div class="review-author">
+            <div class="review-avatar">J</div>
+            <div class="review-info">
+              <h4>James & Catherine Wright</h4>
+              <span>London, UK • Machame Route</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <blockquote>"Summit achieved! I was nervous about the climb, but the guides were incredibly supportive. They knew exactly when to push and when to rest. A life-changing experience."</blockquote>
+          <div class="review-author">
+            <div class="review-avatar">E</div>
+            <div class="review-info">
+              <h4>Elena Rossi</h4>
+              <span>Milan, Italy • Northern Circuit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <h2>Ready for Your Adventure?</h2>
+      <p>Your African story starts with one step. Let us help you plan an expedition you'll remember forever. Surely smiles await!</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn-white">Get Your Free Quote</a>
+        <a href="#" class="btn-outline">WhatsApp Us Directly</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: white;">KILISMILE TRAILS & SAFARIS</span>
+            <span style="font-size: 12px; font-style: italic; color: var(--gold);">surely Smiles</span>
+          </div>
+          <p>Tanzania's trusted expedition company since 2009. We don't just show you Africa — we help you experience it in ways you'll never forget.</p>
+          <div class="footer-badges">
+            <span>TATO MEMBER</span>
+            <span>LICENSED OPERATOR</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>EXPEDITIONS</h4>
+          <a href="#">Kilimanjaro Routes</a>
+          <a href="#">Safari Tours</a>
+          <a href="#">Day Trips</a>
+          <a href="#">Zanzibar</a>
+          <a href="#">Custom Trips</a>
+        </div>
+        <div class="footer-links">
+          <h4>COMPANY</h4>
+          <a href="#">About Us</a>
+          <a href="#">Our Team</a>
+          <a href="#">Reviews</a>
+          <a href="#">Gallery</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-links">
+          <h4>CONTACT</h4>
+          <a href="#">Moshi, Kilimanjaro</a>
+          <a href="#">Tanzania, East Africa</a>
+          <a href="#">info@kilismile.com</a>
+          <a href="#">+255 123 456 789</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Kilismile Trails & Safaris. All rights reserved.</p>
+        <p>Moshi, Tanzania • 3.0674° S, 37.3556° E</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <div class="whatsapp">
+    <a href="https://wa.me/255123456789">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat with us
+    </a>
+  </div>
+
+  <!-- Slider Script -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const totalSlides = slides.length;
+    
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      currentSlide = (index + totalSlides) % totalSlides;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+    
+    // Auto advance
+    setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+    
+    // Arrow navigation
+    document.getElementById('prevSlide').addEventListener('click', () => showSlide(currentSlide - 1));
+    document.getElementById('nextSlide').addEventListener('click', () => showSlide(currentSlide + 1));
+  </script>
+
+</body>
+</html>
